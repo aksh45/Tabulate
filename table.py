@@ -19,7 +19,7 @@ for x in range(coloumns):
 sumn=0
 for x in range(n):
     sumn+=length[x]
-sumn+=4*(coloumns-1)+4
+sumn+=4*(coloumns-1)+n+1
 print(" ",end="")
 for x in range(sumn):
     print("_",end="")
@@ -33,5 +33,4 @@ for x in range(n):
             spaces=" "*2+li[x][i]+(length[i]+2-len(li[x][i]))*" "+"|"
         print(spaces,end="")
     print()
-
 
