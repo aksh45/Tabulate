@@ -1,7 +1,9 @@
+#no of rows in table
 n=int(input("Enter no of rows for table "))
 coloumns=int(input("Enter no of coloumns for table"))
-li=[]
-length=[]
+li=[]#table
+length=[]#list of max length of each coloumn
+#input table
 for x in range(n):
     lis=input().split()
     li.append(lis)
@@ -14,7 +16,16 @@ for x in range(coloumns):
         elif maxn<lgth:
             maxn=lgth
     length.append(maxn)
+sumn=0
 for x in range(n):
+    sumn+=length[x]
+sumn+=4*(coloumns-1)+4
+print(" ",end="")
+for x in range(sumn):
+    print("_",end="")
+print()
+for x in range(n):
+    print("|",end="")
     for i in range(coloumns):
         if i==0:
             spaces=li[x][i]+(length[i]+2-len(li[x][i]))*" "+"|"
@@ -22,4 +33,5 @@ for x in range(n):
             spaces=" "*2+li[x][i]+(length[i]+2-len(li[x][i]))*" "+"|"
         print(spaces,end="")
     print()
+
 
